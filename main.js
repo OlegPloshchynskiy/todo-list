@@ -1,4 +1,4 @@
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [ ];
 
 let getsEl = (e) => document.querySelector(e); //Query selector function
 
@@ -98,6 +98,13 @@ inputText.addEventListener("keyup", (e) => {
 
 
 
+let sortBtn = getsEl(".sort-btn");
+sortBtn.addEventListener("click", function () {
+    tasks.sort();
+    clearList();
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.getItem("tasks");
+    generateList(tasks);
+})
 
 generateList(tasks);
-
