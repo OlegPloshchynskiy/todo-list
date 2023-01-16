@@ -49,7 +49,7 @@ function clearList() { // function for clear all tasks in list
 }
 
 function generateList(taskArray) { // function for generate list
-    for (let i = 0; i <= taskArray.length; i++) {
+    for (let i = 0; i < taskArray.length; i++) {
         let li = listTemplate(taskArray[i]);
         ul.appendChild(li);
     }
